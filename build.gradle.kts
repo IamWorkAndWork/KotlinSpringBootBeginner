@@ -23,6 +23,15 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
+	implementation("mysql:mysql-connector-java:8.0.14")
+
+//	implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.11.2")
+	implementation("com.zaxxer:HikariCP:3.4.1")
+	implementation("org.springframework.boot:spring-boot-starter-jdbc")
+	implementation("org.flywaydb:flyway-core:5.2.3" )
+
+//	implementation group: 'com.zaxxer', name: 'HikariCP', version: '3.4.1'
+
 }
 
 tasks.withType<Test> {

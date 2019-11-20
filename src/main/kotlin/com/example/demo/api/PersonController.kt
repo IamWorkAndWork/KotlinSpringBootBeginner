@@ -12,9 +12,24 @@ import javax.validation.Valid
 @RestController
 class PersonController(@Autowired private val personService: PersonService) {
 
+    data class addPersonStatus(val status:String,val message:String)
+
     @PostMapping
-    fun addPerson(@Valid @NotNull @RequestBody person: Person) {
-        personService.addPerson(person)
+    fun addPerson(@Valid @NotNull @RequestBody person: Person): addPersonStatus {
+        val res = personService.addPerson(person)
+        if (res > 0) {
+//            return "create person success"
+            return addPersonStatus("success","Add success")
+        } else {
+//            return "create person failed"
+            return addPersonStatus("error","Add error")
+        }
+
+    }
+
+    @GetMapping("/hello")
+    fun getHello(): String {
+        return "Hello World"
     }
 
     @GetMapping

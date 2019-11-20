@@ -1,0 +1,7 @@
+app:
+  datasource:
+    jdbc-url: jdbc:mysql://localhost:3306/spring-boot-post
+    username: phutsa
+    password: password
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    pool-size: 30
